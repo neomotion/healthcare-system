@@ -1,0 +1,538 @@
+{
+    "alzheimer": {
+        "display_name": "Alzheimer Detection",
+        "description": "Detect Alzheimer from brain MRI",
+        "model_type": "tensorflow",
+        "model_path": "models/alzheimer.h5",
+        "data_type": "image",
+        "preprocessing": {
+            "target_size": [128, 128],
+            "normalize": true
+        },
+        "output_format": {
+            "type": "binary",
+            "threshold": 0.5
+        },
+        "input_fields": [
+            {
+                "name": "image",
+                "type": "file",
+                "accept": "image/*",
+                "required": true
+            }
+        ]
+    },
+    "diabetes": {
+        "display_name": "Diabetes Risk Assessment",
+        "description": "Predict diabetes risk based on health metrics",
+        "model_type": "sklearn",
+        "model_path": "models/diabetes2.joblib",
+        "data_type": "tabular",
+        "preprocessing": {
+            "input_order": ["Pregnancies","Glucose","BloodPressure","SkinThickness","Insulin","BMI","DiabetesPedigreeFunction","Age"]
+        },
+        "output_format": {
+            "type": "binary",
+            "threshold": 0.5
+        },
+        "input_fields": [
+            {
+                "name": "Pregnancies",
+                "type": "number",
+                "label": "Pregnancies",
+                "required": true
+            },
+            {
+                "name": "Glucose",
+                "type": "number",
+                "label": "Glucose",
+                "required": true
+            },
+            {
+                "name": "BloodPressure",
+                "type": "number",
+                "label": "BloodPressure",
+                "required": true
+            },
+            {
+                "name": "SkinThickness",
+                "type": "number",
+                "label": "SkinThickness",
+                "required": true
+            },
+            {
+                "name": "Insulin",
+                "type": "number",
+                "label": "Insulin",
+                "required": true
+            },
+            {
+                "name": "BMI",
+                "type": "number",
+                "label": "BMI",
+                "required": true
+            },
+            {
+                "name": "DiabetesPedigreeFunction",
+                "type": "number",
+                "label": "DiabetesPedigreeFunction",
+                "required": true
+            },
+            {
+                "name": "Age",
+                "type": "number",
+                "label": "Age",
+                "required": true
+            }
+        ]
+    },
+    "brain_tumor": {
+        "display_name": "Brain Tumor",
+        "description": "Detect Brain Tumor from MRI",
+        "model_type": "tensorflow",
+        "model_path": "models/brain_tumor_detector.h5",
+        "data_type": "image",
+        "preprocessing": {
+            "target_size": [240, 240],
+            "normalize": true
+        },
+        "output_format": {
+            "type": "binary",
+            "threshold": 0.5
+        },
+        "input_fields": [
+            {
+                "name": "image",
+                "type": "file",
+                "accept": "image/*",
+                "required": true
+            }
+        ]
+    },
+    "breast_cancer": {
+        "display_name": "Breast Cancer Detection",
+        "description": "Predict Breast Cancer risk based on health metrics",
+        "model_type": "sklearn",
+        "model_path": "models/breast_cancer.joblib",
+        "data_type": "tabular",
+        "preprocessing": {
+            "input_order": ["id","radius_mean","texture_mean","perimeter_mean","area_mean","smoothness_mean","compactness_mean","concavity_mean","concave points_mean","symmetry_mean","fractal_dimension_mean","radius_se","texture_se","perimeter_se","area_se","smoothness_se","compactness_se","concavity_se","concave points_se","symmetry_se","fractal_dimension_se","radius_worst","texture_worst","perimeter_worst","area_worst","smoothness_worst","compactness_worst","concavity_worst","concave points_worst","symmetry_worst","fractal_dimension_worst"]
+        },
+        "output_format": {
+            "type": "binary",
+            "threshold": 0.5
+        },
+        "input_fields": [
+            {
+                "name": "id",
+                "type": "number",
+                "label": "Patient ID",
+                "required": true
+            },
+            {
+                "name": "radius_mean",
+                "type": "number",
+                "label": "Radius Mean",
+                "required": true
+            },
+            {
+                "name": "texture_mean",
+                "type": "number",
+                "label": "Texture Mean",
+                "required": true
+            },
+            {
+                "name": "perimeter_mean",
+                "type": "number",
+                "label": "Perimeter Mean",
+                "required": true
+            },
+            {
+                "name": "area_mean",
+                "type": "number",
+                "label": "Area Mean",
+                "required": true
+            },
+            {
+                "name": "smoothness_mean",
+                "type": "number",
+                "label": "Smoothness Mean",
+                "required": true
+            },
+            {
+                "name": "compactness_mean",
+                "type": "number",
+                "label": "Compactness Mean",
+                "required": true
+            },
+            {
+                "name": "concavity_mean",
+                "type": "number",
+                "label": "Concavity Mean",
+                "required": true
+            },
+            {
+                "name": "concave points_mean",
+                "type": "number",
+                "label": "Concave Points Mean",
+                "required": true
+            },
+            {
+                "name": "symmetry_mean",
+                "type": "number",
+                "label": "Symmetry Mean",
+                "required": true
+            },
+            {
+                "name": "fractal_dimension_mean",
+                "type": "number",
+                "label": "Fractal Dimension Mean",
+                "required": true
+            },
+            {
+                "name": "radius_se",
+                "type": "number",
+                "label": "Radius SE",
+                "required": true
+            },
+            {
+                "name": "texture_se",
+                "type": "number",
+                "label": "Texture SE",
+                "required": true
+            },
+            {
+                "name": "perimeter_se",
+                "type": "number",
+                "label": "Perimeter SE",
+                "required": true
+            },
+            {
+                "name": "area_se",
+                "type": "number",
+                "label": "Area SE",
+                "required": true
+            },
+            {
+                "name": "smoothness_se",
+                "type": "number",
+                "label": "Smoothness SE",
+                "required": true
+            },
+            {
+                "name": "compactness_se",
+                "type": "number",
+                "label": "Compactness SE",
+                "required": true
+            },
+            {
+                "name": "concavity_se",
+                "type": "number",
+                "label": "Concavity SE",
+                "required": true
+            },
+            {
+                "name": "concave points_se",
+                "type": "number",
+                "label": "Concave Points SE",
+                "required": true
+            },
+            {
+                "name": "symmetry_se",
+                "type": "number",
+                "label": "Symmetry SE",
+                "required": true
+            },
+            {
+                "name": "fractal_dimension_se",
+                "type": "number",
+                "label": "Fractal Dimension SE",
+                "required": true
+            },
+            {
+                "name": "radius_worst",
+                "type": "number",
+                "label": "Radius Worst",
+                "required": true
+            },
+            {
+                "name": "texture_worst",
+                "type": "number",
+                "label": "Texture Worst",
+                "required": true
+            },
+            {
+                "name": "perimeter_worst",
+                "type": "number",
+                "label": "Perimeter Worst",
+                "required": true
+            },
+            {
+                "name": "area_worst",
+                "type": "number",
+                "label": "Area Worst",
+                "required": true
+            },
+            {
+                "name": "smoothness_worst",
+                "type": "number",
+                "label": "Smoothness Worst",
+                "required": true
+            },
+            {
+                "name": "compactness_worst",
+                "type": "number",
+                "label": "Compactness Worst",
+                "required": true
+            },
+            {
+                "name": "concavity_worst",
+                "type": "number",
+                "label": "Concavity Worst",
+                "required": true
+            },
+            {
+                "name": "concave points_worst",
+                "type": "number",
+                "label": "Concave Points Worst",
+                "required": true
+            },
+            {
+                "name": "symmetry_worst",
+                "type": "number",
+                "label": "Symmetry Worst",
+                "required": true
+            },
+            {
+                "name": "fractal_dimension_worst",
+                "type": "number",
+                "label": "Fractal Dimension Worst",
+                "required": true
+            }
+        ]
+    },
+    "heart": {
+        "display_name": "Heart Disease Risk Assessment",
+        "description": "Predict Heart Disease risk based on health metrics",
+        "model_type": "sklearn",
+        "model_path": "models/heart.joblib",
+        "data_type": "tabular",
+        "preprocessing": {
+            "input_order": ["age","sex","cp","trestbps","chol","fbs","restecg","thalach","exang","oldpeak","slope","ca","thal"]
+        },
+        "output_format": {
+            "type": "binary",
+            "threshold": 0.5
+        },
+        "input_fields": [
+            {
+                "name": "age",
+                "type": "number",
+                "label": "Age",
+                "required": true
+            },
+            {
+                "name": "sex",
+                "type": "number",
+                "label": "Sex",
+                "required": true
+            },
+            {
+                "name": "cp",
+                "type": "number",
+                "label": "Chest Pain Type (CP)",
+                "required": true
+            },
+            {
+                "name": "trestbps",
+                "type": "number",
+                "label": "Resting Blood Pressure (Trestbps)",
+                "required": true
+            },
+            {
+                "name": "chol",
+                "type": "number",
+                "label": "Serum Cholesterol (Chol)",
+                "required": true
+            },
+            {
+                "name": "fbs",
+                "type": "number",
+                "label": "Fasting Blood Sugar (FBS)",
+                "required": true
+            },
+            {
+                "name": "restecg",
+                "type": "number",
+                "label": "Resting Electrocardiographic Results (RestECG)",
+                "required": true
+            },
+            {
+                "name": "thalach",
+                "type": "number",
+                "label": "Maximum Heart Rate Achieved (Thalach)",
+                "required": true
+            },
+            {
+                "name": "exang",
+                "type": "number",
+                "label": "Exercise-Induced Angina (Exang)",
+                "required": true
+            },
+            {
+                "name": "oldpeak",
+                "type": "number",
+                "label": "ST Depression (Oldpeak)",
+                "required": true
+            },
+            {
+                "name": "slope",
+                "type": "number",
+                "label": "Slope of the Peak Exercise ST Segment",
+                "required": true
+            },
+            {
+                "name": "ca",
+                "type": "number",
+                "label": "Number of Major Vessels Colored by Fluoroscopy (CA)",
+                "required": true
+            },
+            {
+                "name": "thal",
+                "type": "number",
+                "label": "Thalassemia (Thal)",
+                "required": true
+            }
+        ]
+    },
+    "hepatitis": {
+        "display_name": "Hepatitis Risk Assessment",
+        "description": "Predict Hepatitis risk based on health metrics",
+        "model_type": "sklearn",
+        "model_path": "models/hepatitis.joblib",
+        "data_type": "tabular",
+        "preprocessing": {
+            "input_order": ["age","sex","steroid","antivirals","fatigue","malaise","anorexia","liver_big","liver_firm","spleen_palpable","spiders","ascites","varices","bilirubin","alk_phosphate","sgot","albumin","protime","histology"]
+        },
+        "output_format": {
+            "type": "binary",
+            "threshold": 0.5
+        },
+        "input_fields": [
+            {
+                "name": "age",
+                "type": "number",
+                "label": "Age",
+                "required": true
+            },
+            {
+                "name": "sex",
+                "type": "number",
+                "label": "Sex",
+                "required": true
+            },
+            {
+                "name": "steroid",
+                "type": "number",
+                "label": "Steroid",
+                "required": true
+            },
+            {
+                "name": "antivirals",
+                "type": "number",
+                "label": "Antivirals",
+                "required": true
+            },
+            {
+                "name": "fatigue",
+                "type": "number",
+                "label": "Fatigue",
+                "required": true
+            },
+            {
+                "name": "malaise",
+                "type": "number",
+                "label": "Malaise",
+                "required": true
+            },
+            {
+                "name": "anorexia",
+                "type": "number",
+                "label": "Anorexia",
+                "required": true
+            },
+            {
+                "name": "liver_big",
+                "type": "number",
+                "label": "Liver Big",
+                "required": true
+            },
+            {
+                "name": "liver_firm",
+                "type": "number",
+                "label": "Liver Firm",
+                "required": true
+            },
+            {
+                "name": "spleen_palpable",
+                "type": "number",
+                "label": "Spleen Palpable",
+                "required": true
+            },
+            {
+                "name": "spiders",
+                "type": "number",
+                "label": "Spiders",
+                "required": true
+            },
+            {
+                "name": "ascites",
+                "type": "number",
+                "label": "Ascites",
+                "required": true
+            },
+            {
+                "name": "varices",
+                "type": "number",
+                "label": "Varices",
+                "required": true
+            },
+            {
+                "name": "bilirubin",
+                "type": "number",
+                "label": "Bilirubin",
+                "required": true
+            },
+            {
+                "name": "alk_phosphate",
+                "type": "number",
+                "label": "Alkaline Phosphatase",
+                "required": true
+            },
+            {
+                "name": "sgot",
+                "type": "number",
+                "label": "Serum Glutamic-Oxaloacetic Transaminase (SGOT)",
+                "required": true
+            },
+            {
+                "name": "albumin",
+                "type": "number",
+                "label": "Albumin",
+                "required": true
+            },
+            {
+                "name": "protime",
+                "type": "number",
+                "label": "Prothrombin Time (Protime)",
+                "required": true
+            },
+            {
+                "name": "histology",
+                "type": "number",
+                "label": "Histology",
+                "required": true
+            }
+        ]
+    }
+}

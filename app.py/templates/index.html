@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title style="text-align: center;">Healthcare Prediction System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+        .navbar-brand {
+            font-weight: bold;
+        }
+        .card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .result-box {
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .theme-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        .navbar {
+            justify-content: center; /* Centers the content in the navbar */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">Healthcare Prediction System</a>
+        </div>
+    </nav>
+    <button class="theme-toggle btn btn-light" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+    <div class="container mt-4">
+        <h1 class="text-center">Welcome to the Healthcare Prediction System</h1>
+        <p class="text-center">Select a disease detection option to start your analysis.</p>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Alzheimer Detection</h5>
+                        <p class="card-text">Detect Alzheimer from brain MRI scans.</p>
+                        <a href="/predict/alzheimer" class="btn btn-primary">Start Detection</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Diabetes Risk Assessment</h5>
+                        <p class="card-text">Predict diabetes risk based on health metrics.</p>
+                        <a href="/predict/diabetes" class="btn btn-primary">Start Detection</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Brain Tumor Detection</h5>
+                        <p class="card-text">Detect brain tumors from MRI scans.</p>
+                        <a href="/predict/brain_tumor" class="btn btn-primary">Start Detection</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Breast Cancer Detection</h5>
+                        <p class="card-text">Predict the risk of breast cancer based on health data.</p>
+                        <a href="/predict/breast_cancer" class="btn btn-primary">Start Detection</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Heart Disease Risk Assessment</h5>
+                        <p class="card-text">Predict heart disease risk using key health metrics.</p>
+                        <a href="/predict/heart" class="btn btn-primary">Start Detection</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Hepatitis Risk Assessment</h5>
+                        <p class="card-text">Predict hepatitis risk based on health metrics.</p>
+                        <a href="/predict/hepatitis" class="btn btn-primary">Start Detection</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('bg-dark');
+            document.body.classList.toggle('text-white');
+            themeToggle.innerHTML = document.body.classList.contains('bg-dark') ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+    </script>
+</body>
+</html>
